@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/2.png'); /* Pastikan path dimulai dari public */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Memusatkan container */
+    align-items: center;
+}
+
+.sidebar {
+    width: 230px;
+    height: 100vh;
+    background: #14632e;
+    color: #f39c12;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.pembeli-text {
+    color: #ffffff; /* Ubah warna sesuai preferensi */
+    font-weight: bold;
+    margin-left: 10px;  /* Membuat teks lebih mencolok */
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin: 0; /* Hilangkan margin agar garis menyatu */
+    padding: 15px 0; /* Pastikan ada ruang untuk teks tanpa mengganggu garis */
+    border-bottom: 2px solid rgb(255, 255, 255);
+    display: flex; /* Gunakan flex agar elemen lebih stabil */
+    align-items: center; /* Pastikan teks tetap rapi */
+    justify-content: center; /* Pastikan teks di tengah */
+    width: 100%; /* Pastikan garis mengikuti lebar penuh sidebar */
+    box-sizing: border-box; /* Pastikan padding tidak menambah ukuran elemen */
+}
+
+.sidebar ul {
+    list-style: none;
+    display: block;
+     padding-left: 10px;
+}
+
+.sidebar ul li {
+    padding-left: 0px;
+    margin-bottom: 16px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 17px;
+     gap: 10px;
+}
+
+.sidebar ul li a:hover {
+    background: #34495e;
+}
+
+.content {
+    margin-left: 270px;
+    padding: 20px;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.content.full {
+    margin-left: 0;
+}
+
+.logout-container {
+    margin-top: 380px; /* Mendorong tombol ke paling bawah */
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center; /* Pastikan teks ada di tengah vertikal */
+    justify-content: center; /* Pastikan teks ada di tengah horizontal */
+    width: 100%;
+    height: 30px; /* Tinggi yang proporsional */
+    background-color: #e74c3c;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+    border: none; 
+    gap: 8px;/* Hapus border agar tampilan bersih */
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+.layout-container {
+    display: flex;
+    height: 100vh;
+}
+
+.main-container {
+    flex-grow: 1;
+    margin-left: 270px; /* Sesuaikan dengan lebar sidebar */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Warna latar belakang dengan transparansi */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 1000px; /* Atur ukuran maksimal */
+}
+
+.main-container h2 {
+    color: #14632e;
+    font-size: 24px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #14632e;
+    padding-bottom: 5px;
+}
+
+.main-container p {
+    color: #333;
+    font-size: 16px;
+}
+
+.barang-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 2px solid #14632e; /* Menambahkan garis luar tabel */
+}
+
+.barang-table th, .barang-table td {
+    border: 1px solid black; /* Menambahkan garis di setiap sel */
+    padding: 10px;
+    text-align: left;
+}
+
+.barang-table th {
+    background-color: #14632e;
+    color: white;
+}
+
+.barang-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Menambahkan efek zebra pada tabel */
+}
+
+.edit-btn, .delete-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #14632e;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #d68910;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px; /* Atur posisi di sebelah kiri */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #14632e;
+}
+
+#searchInput {
+    width: 300px;
+    padding: 10px 10px 10px 40px; /* Tambahkan padding kiri agar teks tidak bertabrakan dengan ikon */
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #14632e;
+    outline: none;
+}
+
+
+#searchButton {
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background: #14632e;
+    color: white;
+    cursor: pointer;
+    display: inline-flex; /* Sejajar dengan input */
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    top: 2px;/ /* Jarak antara ikon dan teks */
+}
+
+#searchButton i {
+    font-size: 18px;
+}
+
+#searchButton:hover {
+    background: #0d4720;
+}
+
+.sidebar ul li a.active {
+    background: #f39c12; /* Warna lebih mencolok */
+    color: black; /* Warna teks lebih kontras */
+    font-weight: bold;
+}
+
+

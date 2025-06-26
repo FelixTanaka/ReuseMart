@@ -1,0 +1,316 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;/* Set body background to white */
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Center the container */
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #414b5b; /* Lighter green for the sidebar */
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    color: #f39c12;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.pembeli-text {
+    color: #ffffff; /* Change color as preferred */
+    font-weight: bold;
+    margin-left: 10px;  /* Make text more prominent */
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin: 0; /* Remove margin to make the line merge */
+    padding: 15px 0; /* Ensure there is space for text without disturbing the line */
+    border-bottom: 2px solid rgb(255, 255, 255);
+    display: flex; /* Use flex for more stable elements */
+    align-items: center; /* Ensure text remains neat */
+    justify-content: center; /* Center the text */
+    width: 100%; /* Ensure the line follows the full width of the sidebar */
+    box-sizing: border-box;
+    font-size: 22px; /* Ensure padding does not add to the element size */
+}
+
+.menu-list {
+    flex: 1; /* If there are many menus, it becomes scrollable */
+}
+
+.sidebar ul {
+    list-style: none;
+    display: block;
+    padding-left: 10px;
+}
+
+.sidebar ul li {
+    padding-left: 0px;
+    margin-bottom: 16px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.sidebar ul li a:hover {
+    background: #34495e;
+}
+
+.content {
+    margin-left: 270px;
+    padding: 20px;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.content.full {
+    margin-left: 0;
+}
+
+.logout-container {
+    margin-top: 30px; 
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    width: 100%;
+    height: 30px; /* Proportional height */
+    background-color: #e74c3c;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+    border: none; 
+    gap: 8px; /* Remove border for a clean look */
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+.layout-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar ul li a.active {
+    background: #f39c12; /* More prominent color */
+    color: black; /* More contrasting text color */
+    font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px;
+}
+
+.modal.open {
+    display: flex; /* Show modal with flex */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px 25px; /* Comfortable distance from the inner edges (top & bottom) */
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh; /* Prevent excessive height, can scroll if too long */
+    overflow-y: auto; /* Allow scrolling if too long */
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    top: 50%;
+    transform: translateY(-60%);
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.lihat-detail-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lihat-detail-btn:hover {
+    background-color: #2980b9;
+}
+
+.main-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px; /* Smaller than before */
+    height: 280px; /* Horizontal box shape */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 120px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #14632e;
+    color: white;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.lihat-detail-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.lihat-detail-btn:hover {
+    background-color: #2980b9;
+}
+
+.title {
+    margin-top: 0;          /* Adjust top margin to raise it */
+    margin-bottom: 20px;       /* Bottom margin for space before the table */
+    text-align: center;        /* Optional: center title */
+    border-bottom: 2px solid #14632e; /* Underline with sidebar green color */
+    width: 100%;        /* Width follows text */
+    margin-left: auto;         /* Centering horizontally */
+    margin-right: auto;
+    padding-bottom: 5px;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #14632e;
+    border-bottom: 2px solid #14632e;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.modal-content p {
+    margin: 8px 0;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background-color: #f8f8f8;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.modal-content p strong {
+    flex: 1;
+    color: #2c3e50;
+}
+
+.modal-content p span {
+    flex: 2;
+    text-align: right;
+    color: #34495e;
+}
+
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+    }
+
+    .modal-content p {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .modal-content p span {
+        text-align: left;
+        margin-top: 4px;
+    }
+}
+
+.top-navbar-adjacent {
+    position: fixed;
+    top: 0;
+    left: 230px; /* Sama dengan lebar sidebar */
+    height: 50px;
+    width: calc(100% - 230px); /* Sisa lebar layar setelah sidebar */
+    background-color: #414b5b; 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.top-navbar-adjacent .navbar-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+

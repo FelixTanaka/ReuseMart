@@ -1,0 +1,248 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/2.png'); /* Pastikan path dimulai dari public */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Memusatkan container */
+    align-items: center;
+    flex-direction: column;
+     max-width: 100%;
+    overflow-x: hidden;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #14632e;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    color: #f39c12;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.pembeli-text {
+    color: #ffffff; /* Ubah warna sesuai preferensi */
+    font-weight: bold;
+    margin-left: 10px;  /* Membuat teks lebih mencolok */
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin: 0; /* Hilangkan margin agar garis menyatu */
+    padding: 15px 0; /* Pastikan ada ruang untuk teks tanpa mengganggu garis */
+    border-bottom: 2px solid rgb(255, 255, 255);
+    display: flex; /* Gunakan flex agar elemen lebih stabil */
+    align-items: center; /* Pastikan teks tetap rapi */
+    justify-content: center; /* Pastikan teks di tengah */
+    width: 100%; /* Pastikan garis mengikuti lebar penuh sidebar */
+    box-sizing: border-box; /* Pastikan padding tidak menambah ukuran elemen */
+}
+
+.menu-list {
+    flex: 1;
+    overflow-y: auto; /* Jika menu banyak, jadi scrollable */
+}
+
+.sidebar ul {
+    list-style: none;
+    display: block;
+     padding-left: 10px;
+}
+
+.sidebar ul li {
+    padding-left: 0px;
+    margin-bottom: 16px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.sidebar ul li a:hover {
+    background: #34495e;
+}
+
+.content.full {
+    margin-left: 0;
+}
+
+.logout-container {
+    margin-top: 30px; 
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center; /* Pastikan teks ada di tengah vertikal */
+    justify-content: center; /* Pastikan teks ada di tengah horizontal */
+    width: 100%;
+    height: 30px; /* Tinggi yang proporsional */
+    background-color: #e74c3c;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+    border: none; 
+    gap: 8px;/* Hapus border agar tampilan bersih */
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+.layout-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar ul li a.active {
+    background: #f39c12; /* Warna lebih mencolok */
+    color: black; /* Warna teks lebih kontras */
+    font-weight: bold;
+}
+
+.content {
+    margin-left: 255px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9); /* putih semi-transparan */
+    min-height: 100vh;
+    box-sizing: border-box;
+    max-width: 1100px;     /* Batasi lebar maksimal */
+    margin-right: auto;    /* Buat konten lebih rapi */
+    margin-top: 30px;
+    border-radius: 12px;   /* Biar lembut di sudut */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    overflow-x: auto;  /* Tambah bayangan */
+}
+
+
+.content h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 800px;
+}
+
+th, td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #ecf0f1;
+    text-align: left;
+    font-size: 15px;
+}
+
+th {
+    background-color: #14632e;;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background-color: #f0f8ff;
+}
+
+td {
+    color: #2d3436;
+}
+
+/* Tombol aksi */
+.btn-atur {
+    background-color: #e67e22;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.btn-atur:hover {
+    background-color: #d35400;
+}
+
+.modal {
+    display: none; /* default hidden */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* dark background */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto; /* center vertically */
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    position: relative;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.cetak-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 6px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.cetak-btn:hover {
+    background-color: #c0392b;
+}

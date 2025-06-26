@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/1.png'); /* Pastikan path dimulai dari public */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Memusatkan container */
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Agar gambar dan form tersusun horizontal */
+    align-items: center;
+    width: 700px;
+    background: #B1FFDA;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-wrapper {
+    display: flex;
+    background: transparent;
+    box-shadow: 0px 5px 15px rgb(255, 255, 255);
+    align-items: center;
+    gap: 20px;
+    width: 800px; /* Batasi lebar tetap proporsional */
+    height: 450px; /* Tambahkan tinggi agar lebih besar */ /* Pastikan tetap elegan */
+}
+
+.login-image {
+    width: 320px;
+    height: auto;
+    padding: 20px; /* Berikan ruang agar gambar tidak menempel langsung */
+}
+
+.login-box {
+    background-color: rgba(240, 240, 240, 0.9);
+    padding: 20px;
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.1); /* Lebih soft dan transparan *//* Bayangan lebih smooth */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    height: 100%;
+    position: absolute;
+    right: 0; /* Menempel ke kanan */
+    top: 0; /* Menempel ke atas */
+    bottom: 0; /* Menempel ke bawah */
+    backdrop-filter: blur(8px);/* Hanya sisi kanan yang melengkung */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+    margin-top: -10px;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 270px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.btn-login {
+    width: 288px;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-login:hover {
+    background-color: #2980b9;
+}
+
+p{
+    font-size: 14px;
+}
+
+a{
+    color: rgb(13, 191, 105);
+}
+
+/* Container Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Beri sedikit jarak antara label dan dropdown */
+}
+
+/* Label Role */
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Dropdown Select */
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    appearance: none; /* Hapus tampilan default browser */ /* Tambahkan shadow */
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+/* Hover dan Focus */
+select:hover {
+    border-color: #2980b9;
+    background: #ecf0f1;
+}
+
+select:focus {
+    outline: none;
+    border-color: #1abc9c;
+}
+
+/* Pilihan Dropdown */
+option {
+    font-size: 14px;
+    padding: 8px;
+    
+}
+
+
+

@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/2.png'); /* Pastikan path dimulai dari public */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.navbar {
+    position: fixed; /* Navbar tetap di atas */
+    width: 100%; /* Tetap penuh */
+    height: 40px; /* Tetapkan tinggi agar tidak terlalu besar */
+    top: 0;
+    left: 0;
+    background-color: #51ccab;  /* Pastikan latar belakang solid */
+    padding: 10px 30px; /* Kurangi padding agar tidak tampak terlalu besar */
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    justify-content: center;/* Pastikan navbar selalu terlihat */
+}
+
+
+.menu {
+    display: flex;
+    gap: 20px;
+    flex-grow:1;
+    justify-content: center; 
+    padding-right: 150px;/* Geser link sedikit ke kiri */
+}
+
+.navbar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    color:  #16cce4;; /* Hanya warna teks yang berubah */
+    background-color: transparent; /* Pastikan background tidak berubah */
+}
+
+.tombol {
+    display: flex;
+    gap: 10px; /* Beri jarak antar tombol */
+    position: absolute;
+    right: 150px;/* Geser tombol ke kiri */
+}
+
+.btn-biru {
+    background-color: rgb(34, 112, 200); /* Warna biru */
+    color: rgb(0, 0, 0);
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 2px solid black;  /* Border tipis sesuai warna */
+    cursor: pointer;
+    font-size: 12px;
+    height: 12px; 
+    width: 50px;
+    align-items: center; /* Pastikan teks berada di tengah secara vertikal */
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-biru:hover {
+    background-color: #16cce4;
+}
+
+.btn-putih {
+    background-color: rgb(240, 135, 135); /* Warna putih */
+    color: rgb(0, 0, 0);
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 2px solid black; /* Border tipis */
+    cursor: pointer;
+    font-size: 12px;
+    width: 50px; /* Pastikan lebar sama */
+    height: 12px; 
+    align-items: center; /* Pastikan teks berada di tengah secara vertikal */
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-putih:hover {
+    background-color: #16cce4;;
+}
+
+
+.navbar-logo {
+    width: 55px; /* Ukuran logo */
+    height: auto;
+    margin-right: 10px; /* Jarak dengan menu */
+}
+
+.tulisan-logo {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Posisi di tengah layar */
+    background-color: #f0f0f0;
+     background: transparent;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paper {
+    width: 800px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); 
+    display: flex;
+    flex-direction: column; /* Atur elemen dari atas ke bawah */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.content {
+    display: flex;
+    align-items: center; /* Pastikan gambar sejajar dengan teks */
+}
+
+.content p {
+    flex: 1; /* Agar paragraf lebih fleksibel */
+    margin-right: 20px; 
+    color: black;
+    text-align: justify; /* Beri jarak antara teks dan gambar */
+}
+
+.gambar {
+    width: 210px; /* Sesuaikan ukuran gambar */
+    height: 190px;
+}
+
+.navbar a.active {
+    color: #ffffff;  /* Warna latar belakang saat aktif */
+    font-weight: bold;
+    border-bottom: 3px solid #ffffff; /* Tambahkan garis bawah */
+    padding-bottom: 5px; /* Beri ruang agar garis bawah tidak terlalu dekat dengan teks */
+}

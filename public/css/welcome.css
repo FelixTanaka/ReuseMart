@@ -1,0 +1,227 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/2.png'); /* Pastikan path dimulai dari public */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.navbar {
+    position: fixed; /* Navbar tetap di atas */
+    width: 100%; /* Tetap penuh */
+    height: 40px; /* Tetapkan tinggi agar tidak terlalu besar */
+    top: 0;
+    left: 0;
+    background-color: #51ccab; /* Pastikan latar belakang solid */
+    padding: 10px 30px; /* Kurangi padding agar tidak tampak terlalu besar */
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    justify-content: center;/* Pastikan navbar selalu terlihat */
+}
+
+
+.menu {
+    display: flex;
+    gap: 20px;
+    flex-grow:1;
+    justify-content: center; 
+    padding-right: 150px;/* Geser link sedikit ke kiri */
+}
+
+.navbar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    color:  #16cce4;; /* Hanya warna teks yang berubah */
+    background-color: transparent; /* Pastikan background tidak berubah */
+}
+
+.tombol {
+    display: flex;
+    gap: 10px; /* Beri jarak antar tombol */
+     position: absolute;
+    right: 150px;/* Geser tombol ke kiri */
+}
+
+.btn-biru {
+    background-color: rgb(34, 112, 200); /* Warna biru */
+    color: rgb(0, 0, 0);
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 2px solid black;  /* Border tipis sesuai warna */
+    cursor: pointer;
+    font-size: 12px;
+    height: 12px; 
+    width: 50px;
+    align-items: center; /* Pastikan teks berada di tengah secara vertikal */
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-biru:hover {
+    background-color: #16cce4;
+} 
+
+.btn-putih {
+    background-color: rgb(240, 135, 135); /* Warna putih */
+    color: rgb(0, 0, 0);
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 2px solid black; /* Border tipis */
+    cursor: pointer;
+    font-size: 12px;
+    width: 50px; /* Pastikan lebar sama */
+    height: 12px; 
+    align-items: center; /* Pastikan teks berada di tengah secara vertikal */
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-putih:hover {
+    background-color: #16cce4;;
+}
+
+
+.navbar-logo {
+    width: 55px; /* Ukuran logo */
+    height: auto;
+    margin-right: 10px; /* Jarak dengan menu */
+}
+
+p {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.product-container {
+    width: 260px; /* Lebar lebih nyaman */
+    height: auto; /* Tinggi otomatis agar fleksibel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px; /* Sudut lebih membulat agar lebih soft */
+    background-color: #ffffff;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih smooth */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    gap: 15px;
+}
+
+/* Efek hover agar terlihat lebih modern */
+.product-container:hover {
+    transform: scale(1.08); /* Efek zoom lebih halus */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4); /* Bayangan lebih jelas */
+}
+
+/* Perbaikan gambar produk */
+.product-image {
+    width: 150px;
+    height: 150px;
+    max-height: 180px; /* Batas tinggi agar tetap proporsional */
+    object-fit: cover;
+    margin-bottom: 12px;
+    padding-bottom: 10px; /* Garis pemisah lebih jelas */
+}
+
+/* Info Produk */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-name {
+    font-size: 20px; /* Sedikit lebih besar */
+    font-weight: bold;
+    margin: 0;
+    color: #333; /* Warna lebih elegan */
+}
+
+.product-price {
+    font-size: 18px;
+    color: #0f8a2a; /* Hijau lebih gelap */
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom per baris */
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px auto;
+    margin-left: 70px;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+/* Background gelap untuk modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Kontainer dalam modal */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+    position: relative;
+    color: black;
+}
+
+/* Gambar produk dalam modal */
+#modal-image {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Tombol Close */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: red;
+}
+
+#modal-name, #modal-description, #modal-status {
+    color: black; /* Ubah warna jadi hitam agar terlihat */
+}
+
+#modal-price {
+    color: green; /* Ubah warna harga jadi hijau */
+    font-weight: bold;
+}
+
+.navbar a.active {
+    color: #ffffff;  /* Warna latar belakang saat aktif */
+    font-weight: bold;
+    border-bottom: 3px solid #ffffff; /* Tambahkan garis bawah */
+    padding-bottom: 5px; /* Beri ruang agar garis bawah tidak terlalu dekat dengan teks */
+}

@@ -1,0 +1,234 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/2.png'); /* Pastikan path dimulai dari public */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Memusatkan container */
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #14632e;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    color: #f39c12;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.pembeli-text {
+    color: #ffffff; /* Ubah warna sesuai preferensi */
+    font-weight: bold;
+    margin-left: 10px;  /* Membuat teks lebih mencolok */
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin: 0; /* Hilangkan margin agar garis menyatu */
+    padding: 15px 0; /* Pastikan ada ruang untuk teks tanpa mengganggu garis */
+    border-bottom: 2px solid rgb(255, 255, 255);
+    display: flex; /* Gunakan flex agar elemen lebih stabil */
+    align-items: center; /* Pastikan teks tetap rapi */
+    justify-content: center; /* Pastikan teks di tengah */
+    width: 100%; /* Pastikan garis mengikuti lebar penuh sidebar */
+    box-sizing: border-box; /* Pastikan padding tidak menambah ukuran elemen */
+}
+
+.menu-list {
+    flex: 1;
+    overflow-y: auto; /* Jika menu banyak, jadi scrollable */
+}
+
+.sidebar ul {
+    list-style: none;
+    display: block;
+     padding-left: 10px;
+}
+
+.sidebar ul li {
+    padding-left: 0px;
+    margin-bottom: 16px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.sidebar ul li a:hover {
+    background: #34495e;
+}
+
+.content {
+    margin-left: 270px;
+    padding: 20px;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.content.full {
+    margin-left: 0;
+}
+
+.logout-container {
+    margin-top: 30px; 
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center; /* Pastikan teks ada di tengah vertikal */
+    justify-content: center; /* Pastikan teks ada di tengah horizontal */
+    width: 100%;
+    height: 30px; /* Tinggi yang proporsional */
+    background-color: #e74c3c;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+    border: none; 
+    gap: 8px;/* Hapus border agar tampilan bersih */
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+.layout-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar ul li a.active {
+    background: #f39c12; /* Warna lebih mencolok */
+    color: black; /* Warna teks lebih kontras */
+    font-weight: bold;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1110px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    position: absolute;
+    margin-left: 230px;
+    padding: 10px;
+    max-height: 90vh; /* Batasi tinggi maksimal */
+    overflow-y: auto; 
+}
+
+.main-container h2 {
+    text-align: center;
+    border-bottom: 2px solid #14632e;
+    margin-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #14632e;
+    font-size: 24px;
+    box-sizing: border-box;
+}
+
+
+.table-container {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-container thead {
+    background-color: #14632e;
+    color: white;
+}
+
+.table-container thead th {
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.table-container thead th.aksi{
+    text-align: center;
+}
+
+.table-container tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.table-container tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table-container tbody td {
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Tombol Aksi */
+.aksi-container {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.edit-btn {
+    background-color: #2a9d8f;
+}
+
+.edit-btn:hover {
+    background-color: #21867a;
+}
+
+.delete-btn {
+    background-color: #e63946;
+}
+
+.delete-btn:hover {
+    background-color: #d62828;
+}
+
