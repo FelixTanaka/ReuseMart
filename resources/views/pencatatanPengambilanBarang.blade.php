@@ -116,22 +116,23 @@
             <a href="{{ route('pegawai.dashboard') }}" class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}">
                 Daftar Barang Penitip
             </a>
-            <a href="{{ route('pegawai.dashboard', 'pencatatan-barang') }}" class="nav-link {{ request()->is('dashboard/pencatatan-barang') ? 'active' : '' }}">
+            <a href="{{ route('pegawai.dashboard', ['halaman' => 'pencatatan-barang']) }}" class="nav-link {{ request()->is('dashboard/pencatatan-barang') ? 'active' : '' }}">
                 Pengambilan Barang
             </a>
-            <a href="{{ route('pegawai.dashboard', 'transaksi-pembeli') }}" class="nav-link {{ request()->is('dashboard/transaksi-pembeli') ? 'active' : '' }}">
+            <a href="{{ route('pegawai.dashboard', ['halaman' => 'transaksi-pembeli']) }}" class="nav-link {{ request()->is('dashboard/transaksi-pembeli') ? 'active' : '' }}">
                 Transaksi Pembeli
             </a>
-            <a href="{{ route('pegawai.dashboard', 'penjadwalan-pengiriman') }}" class="nav-link {{ request()->is('dashboard/penjadwalan-pengiriman') ? 'active' : '' }}">
+            <a href="{{ route('pegawai.dashboard', ['halaman' => 'penjadwalan-pengiriman']) }}" class="nav-link {{ request()->is('dashboard/penjadwalan-pengiriman') ? 'active' : '' }}">
                 Penjadwalan Pengiriman
             </a>
-            <a href="{{ route('pegawai.dashboard', 'penjadwalan-pengambilan') }}" class="nav-link {{ request()->is('dashboard/penjadwalan-pengambilan') ? 'active' : '' }}">
+            <a href="{{ route('pegawai.dashboard', ['halaman' => 'penjadwalan-pengambilan']) }}" class="nav-link {{ request()->is('dashboard/penjadwalan-pengambilan') ? 'active' : '' }}">
                 Jadwal Pengambilan
             </a>
-            <a href="{{ route('pegawai.dashboard', 'transaksi-diambil') }}" class="nav-link {{ request()->is('dashboard/transaksi-diambil') ? 'active' : '' }}">
+            <a href="{{ route('pegawai.dashboard', ['halaman' => 'transaksi-diambil']) }}" class="nav-link {{ request()->is('dashboard/transaksi-diambil') ? 'active' : '' }}">
                 Transaksi Diambil
             </a>
         </nav>
+
 
         <div class="logout-section">
             <form method="POST" action="{{ route('logout') }}">

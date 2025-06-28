@@ -32,23 +32,28 @@ class TransaksiPembelianController extends Controller
             ->get();
 
         foreach ($transaksi as $t) {
+            // Cek: jadwal_pengambilan sudah lewat lebih dari 2 hari & status belum selesai
             if (
-                true
+                $t->jadwal_pengambilan &&
+                Carbon::parse($t->jadwal_pengambilan)->addDays(2)->isPast() &&
+                $t->status_pembelian !== 'selesai' &&
+                $t->status_pembelian !== 'hangus'
             ) {
-                // Update status transaksi
+                // Update status transaksi jadi hangus
                 $t->status_pembelian = 'hangus';
                 $t->save();
 
                 $this->hitungKomisiHunterLangsung($t->id_transaksi_pembelian);
 
-                $barang = Barang::find($t->id_barang); // Pastikan Barang model punya primaryKey = id_barang
+                $barang = Barang::find($t->id_barang);
                 if ($barang) {
                     $barang->status = 'barang untuk donasi';
                     $barang->save();
-                } 
+                }
             }
         }
 
+        // Ambil ulang transaksi dengan relasi pembeli & barang untuk ditampilkan
         $transaksi = TransaksiPembelian::with(['pembeli', 'barang'])
             ->where('id_pembeli', $pembeli->id_pembeli)
             ->get();
@@ -171,7 +176,8 @@ class TransaksiPembelianController extends Controller
         $transaksi->jadwal_pengambilan = $request->jadwal_pengambilan;
         $transaksi->save();
 
-        return redirect()->route('penjadwalanPengambilan')->with('success', 'Jadwal pengambilan berhasil diperbarui.');
+        return redirect()->route('pegawai.dashboard', ['halaman' => 'penjadwalan-pengambilan'])
+                 ->with('success', 'Jadwal pengambilan berhasil diperbarui.');
     }
 
     public function cetakNotaPengambilan($id)
